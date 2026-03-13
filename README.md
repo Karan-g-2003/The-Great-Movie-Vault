@@ -24,7 +24,7 @@
 
 **Netflix-level movie discovery powered by Bayesian scoring algorithms. Search by vibe, mood, genre, or actor — no account needed.**
 
-[Live Demo](#) • [Documentation](#getting-started) • [Issues](https://github.com/Karan-g-2003/cine-gpt/issues)
+[Live Demo](https://the-great-movie-vault.vercel.app/) • [Documentation](#getting-started) • [Issues](https://github.com/Karan-g-2003/cine-gpt/issues)
 
 </div>
 
