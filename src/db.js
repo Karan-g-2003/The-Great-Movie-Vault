@@ -1,5 +1,5 @@
 // ============================================================
-// db.js — Storage Layer for Cine-GPT
+// db.js — Storage Layer for The Great Movie Vault
 // ============================================================
 // localStorage-based persistence with:
 // - Movie object slimming (save only essential fields)

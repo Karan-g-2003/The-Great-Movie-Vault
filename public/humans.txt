@@ -1,5 +1,5 @@
 /* TEAM */
-Developer: Cine-GPT Team
+Developer: The Great Movie Vault Team
 Site: https://thegreatmovievault.com
 Contact: hello@thegreatmovievault.com
 

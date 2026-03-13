@@ -1,5 +1,5 @@
 // ============================================================
-// scoring.js — Netflix-Level Scoring Engine for Cine-GPT
+// scoring.js — Netflix-Level Scoring Engine for The Great Movie Vault
 // ============================================================
 // Implements: Bayesian Weighted Rating, Multi-Signal Relevance,
 // Levenshtein Fuzzy Matching, MMR Diversity, Weighted Shuffle

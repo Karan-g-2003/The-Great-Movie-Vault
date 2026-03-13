@@ -57,4 +57,4 @@ Yes, each movie detail page shows available streaming providers (Netflix, Amazon
 
 ## Optional
 
-- [Source Code](https://github.com/Karan-g-2003/cine-gpt): GitHub repository
+- [Source Code](https://github.com/Karan-g-2003/cine-gpt): GitHub repository (The Great Movie Vault)

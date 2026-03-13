@@ -1,22 +1,28 @@
 ```
-  ██████╗██╗███╗   ██╗███████╗    ███████╗██████╗ ████████╗
- ██╔════╝██║████╗  ██║██╔════╝    ██╔════╝██╔══██╗╚══██╔══╝
- ██║     ██║██╔██╗ ██║█████╗█████╗██║  ███║██████╔╝   ██║   
- ██║     ██║██║╚██╗██║██╔══╝╚════╝██║   ██║██╔═══╝    ██║   
- ╚██████╗██║██║ ╚████║███████╗    ███████╗██║        ██║   
-  ╚═════╝╚═╝╚═╝  ╚═══╝╚══════╝    ╚══════╝╚═╝        ╚═╝   
-   
-        Intelligent AI-Powered Movie Recommendations
-                   🌟 Neon Dreams, Perfect Picks 🌟
+  ████████╗██╗  ██╗███████╗     ██████╗ ██████╗ ███████╗ █████╗ ████████╗
+  ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝ ██╔══██╗██╔════╝██╔══██╗╚══██╔══╝
+     ██║   ███████║█████╗      ██║  ███╗██████╔╝█████╗  ███████║   ██║
+     ██║   ██╔══██║██╔══╝      ██║   ██║██╔══██╗██╔══╝  ██╔══██║   ██║
+     ██║   ██║  ██║███████╗    ╚██████╔╝██║  ██║███████╗██║  ██║   ██║
+     ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝
+
+  ███╗   ███╗ ██████╗ ██╗   ██╗██╗███████╗    ██╗   ██╗ █████╗ ██╗   ██╗██╗  ████████╗
+  ████╗ ████║██╔═══██╗██║   ██║██║██╔════╝    ██║   ██║██╔══██╗██║   ██║██║  ╚══██╔══╝
+  ██╔████╔██║██║   ██║██║   ██║██║█████╗      ██║   ██║███████║██║   ██║██║     ██║
+  ██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██║██╔══╝      ╚██╗ ██╔╝██╔══██║██║   ██║██║     ██║
+  ██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ██║███████╗     ╚████╔╝ ██║  ██║╚██████╔╝███████╗██║
+  ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚═╝╚══════╝      ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝
+
+        🌟 Discover Your Next Favourite Film — Neon Dreams, Perfect Picks 🌟
 ```
 
 <div align="center">
 
 ![License](https://img.shields.io/badge/license-MIT-08DB89?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.0.0-08DB89?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.0.0-08DB89?style=flat-square)
 ![Status](https://img.shields.io/badge/status-active-08DB89?style=flat-square)
 
-**The future of movie discovery is here. Let AI understand what you want to watch.**
+**Netflix-level movie discovery powered by Bayesian scoring algorithms. Search by vibe, mood, genre, or actor — no account needed.**
 
 [Live Demo](#) • [Documentation](#getting-started) • [Issues](https://github.com/Karan-g-2003/cine-gpt/issues)
 
@@ -24,11 +30,11 @@
 
 ---
 
-## ✨ What is Cine-GPT?
+## ✨ What is The Great Movie Vault?
 
-Cine-GPT is an **intelligent, AI-powered movie discovery platform** that understands your taste with unprecedented precision. No more endless scrolling—just tell us your mood, genre, or vibe, and we'll find your next obsession.
+The Great Movie Vault is a **free, intelligent movie discovery platform** that understands your taste with unprecedented precision. No more endless scrolling — just tell us your mood, genre, vibe, decade, or favourite actor, and we'll find your next obsession.
 
-Built with **cutting-edge web technologies** and powered by **The Movie Database API**, Cine-GPT combines elegant design with powerful recommendation algorithms.
+Built with **React 19 + Vite 7** and powered by **The Movie Database API**, The Great Movie Vault combines a stunning glassmorphism UI with **Bayesian-scored recommendation algorithms** that rival Netflix.
 
 ---
 
@@ -38,35 +44,41 @@ Built with **cutting-edge web technologies** and powered by **The Movie Database
 <tr>
 <td width="50%">
 
-### 🤖 Smart AI Search
+### 🤖 Smart Search Engine
 Search intuitively by:
-- **Genres** – Action, Drama, Comedy, Sci-Fi
-- **Moods** – Happy, Sad, Scary, Tense
-- **Keywords** – Plot Twist, Cyberpunk, Heist
-- **Regions** – Bollywood, Hollywood, Korean
+- **Genres** – Action, Drama, Comedy, Sci-Fi, Horror...
+- **Moods** – Happy, Sad, Scary, Tense, Nostalgic, Jolly
+- **Vibes** – Mind-bending, Cyberpunk, Noir, Surreal
+- **Regions** – Bollywood, Korean, Japanese, French...
 - **Decades** – 80s, 90s, 2000s, Classics
+- **Keywords** – Plot Twist, Heist, Time Travel, Revenge
+- **Combinations** – "90s Bollywood thriller", "feel-good Korean drama"
 
 </td>
 <td width="50%">
 
-### ⚡ Lightning Performance
-- **Vite-powered builds** – Near-instant development
-- **Optimized API queries** – Smart caching
-- **Responsive UI** – 60fps animations
-- **Mobile-first design** – Works everywhere
-- **Zero bloat** – Lightweight & fast
+### 🧮 Netflix-Level Algorithm
+- **Bayesian Weighted Rating** – IMDB Top 250 formula
+- **Composite Scoring** – 5 weighted signals
+- **MMR Diversity** – No monotonous results
+- **Levenshtein Fuzzy Match** – Typo tolerance
+- **Weighted Shuffle** – Controlled randomness
+- **Taste Profile** – Learns your preferences
+- **Multi-source Blending** – 3 recommendation sources
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 🎨 Neon Aesthetic
-- **Dark cinematic theme** – Eyes-friendly
-- **Neon green accents** – Modern & sleek (#08DB89)
-- **Smooth animations** – Floating posters
-- **Custom scrollbars** – Polished details
-- **Intuitive layout** – Easy discovery
+### 🎨 Playful Dynamic UI
+- **Gradient mesh background** – Animated hue shifts
+- **3D tilt movie cards** – Hover glow effects
+- **Glassmorphism panels** – Backdrop blur + transparency
+- **SVG Rating Rings** – Circular progress indicators
+- **Skeleton shimmer loading** – Premium feel
+- **Staggered entrance animations** – Page transitions
+- **Google Fonts (Outfit)** – Modern typography
 
 </td>
 <td width="50%">
@@ -74,9 +86,11 @@ Search intuitively by:
 ### 🌍 Global Cinema
 - **Bollywood** – Hindi cinema masterpieces
 - **Hollywood** – English-language blockbusters
-- **Korean Cinema** – Award-winning tales
+- **Korean Cinema** – Award-winning K-movies
 - **Japanese Films** – Anime & live-action
 - **French Cinema** – Artistic excellence
+- **Tamil & Telugu** – South Indian gems
+- **Spanish, Chinese, German** – World cinema
 
 </td>
 </tr>
@@ -92,9 +106,10 @@ Search intuitively by:
 |:---:|:---|
 | **React 19** | ⚛️ UI Component Library |
 | **Vite 7** | ⚡ Next-Gen Build Tool |
-| **Tailwind CSS** | 🎨 Utility-First Styling |
+| **Tailwind CSS 3** | 🎨 Utility-First Styling |
 | **Lucide React** | 🎭 Icon System |
 | **TMDb API** | 🎬 Movie Database |
+| **Custom Scoring Engine** | 🧮 Bayesian WR + MMR + Fuzzy |
 
 </div>
 
@@ -104,28 +119,37 @@ Search intuitively by:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  User Input (Mood, Genre, Keyword, Region, Decade)    │
+│  User Input (Mood, Genre, Keyword, Region, Decade)      │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│  AI Mapping Engine                                      │
-│  • Genre ID Lookup   • Keyword Matching                 │
-│  • Emotion Synthesis • Regional Filtering               │
+│  Tokenized Query Parser                                 │
+│  • Fuzzy Matching    • Genre/Mood ID Lookup             │
+│  • Region Detection  • Keyword Extraction               │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│  Quality Algorithm                                      │
-│  • Vote Average + Vote Count Scoring                    │
-│  • Popularity Weighting                                 │
-│  • Duplicate Removal                                    │
+│  Multi-Strategy Fallback Chain                          │
+│  • Discovery Search (with vote relaxation)              │
+│  • Person Search (actor/director filmography)           │
+│  • Title Search (with Levenshtein fuzzy match)          │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│  🎨 Beautiful Results Display                           │
-│  ✨ Posters • Ratings • Synopses • Recommendations      │
+│  Bayesian Scoring Engine                                │
+│  • WR = (v/(v+m))·R + (m/(v+m))·C                      │
+│  • Composite: Title + Rating + Popularity + Freshness   │
+│  • MMR Diversity Injection                              │
+│  • Fisher-Yates Weighted Shuffle                        │
+└────────────────────┬────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────┐
+│  🎨 Glassmorphism Results Display                       │
+│  ✨ 3D Cards • Rating Rings • Streaming • Trailers      │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -147,10 +171,13 @@ Search intuitively by:
 git clone https://github.com/Karan-g-2003/cine-gpt.git
 cd cine-gpt
 
-# 2️⃣ Install dependencies
+# 2️⃣ Create .env file with your TMDB API key
+echo "VITE_TMDB_API_KEY=your_api_key_here" > .env
+
+# 3️⃣ Install dependencies
 npm install
 
-# 3️⃣ Start development server
+# 4️⃣ Start development server
 npm run dev
 ```
 
@@ -159,11 +186,8 @@ Your app is now running at **http://localhost:5173** ✨
 ### Build for Production
 
 ```bash
-# Create optimized production build
-npm run build
-
-# Preview production build locally
-npm run preview
+npm run build     # Create optimized production build
+npm run preview   # Preview production build locally
 ```
 
 ---
@@ -171,49 +195,35 @@ npm run preview
 ## 📂 Project Architecture
 
 ```
-cine-gpt/
+the-great-movie-vault/
 │
-├── 📄 index.html              # HTML entry point
+├── 📄 index.html              # SEO-optimized HTML (OG, Twitter, JSON-LD, FAQ schema)
 ├── 📦 package.json            # Dependencies & scripts
+├── 🔒 .env                    # API key (not committed)
 │
-├── 🛠️ Configuration Files
-│   ├── vite.config.js         # Vite build config
-│   ├── tailwind.config.js     # Tailwind styling
-│   ├── postcss.config.js      # PostCSS setup
-│   └── eslint.config.js       # Code quality rules
-│
-├── 📁 public/                 # Static assets
+├── 📁 public/
+│   ├── favicon.svg            # Custom compass/clapperboard logo
+│   ├── og-image.png           # Social sharing preview
+│   ├── manifest.json          # PWA manifest
+│   ├── robots.txt             # Crawler rules (15+ AI bots)
+│   ├── sitemap.xml            # Search engine sitemap
+│   ├── llms.txt               # AI/LLM discovery file
+│   ├── llms-full.txt          # Extended AI documentation
+│   ├── ai.txt                 # AI usage policy
+│   ├── humans.txt             # Developer credits
+│   ├── browserconfig.xml      # Windows tiles
+│   └── .well-known/
+│       └── security.txt       # Security disclosure
 │
 └── 📁 src/
-    ├── 🎯 App.jsx            # Main application (923 lines)
-    ├── 🎨 App.css            # Custom styles & animations
-    ├── 📱 main.jsx           # React DOM entry
-    ├── 🌐 index.css          # Global styles
-    └── 🎭 assets/            # Images & media
+    ├── 🎯 App.jsx             # Main application component
+    ├── 🧮 scoring.js          # Bayesian scoring engine
+    ├── 🗄️ db.js               # Storage layer (localStorage)
+    ├── 🧩 components.jsx      # RatingRing, MovieCard, SkeletonGrid
+    ├── 🎨 App.css             # Glassmorphism design system
+    ├── 📱 main.jsx            # React DOM entry
+    └── 🌐 index.css           # Tailwind directives
 ```
-
----
-
-## 🎨 Design System
-
-### Color Palette
-```
-Primary Background:   #050505 (Deep Black)
-Neon Accent:          #08DB89 (Vibrant Green)
-Secondary:            #1a1a1a (Dark Gray)
-Text:                 #ffffff (White)
-```
-
-### Typography
-- **Font Family:** Inter (Modern, clean)
-- **Animations:** Custom floating effects
-- **Transitions:** Smooth 0.5s easing
-
-### UI Elements
-- **Custom Scrollbars** – Neon green hover effects
-- **Neon Shadows** – box-shadow with green glow
-- **Neon Borders** – Subtle green accents
-- **Floating Animations** – Posters with 15s cycles
 
 ---
 
@@ -225,16 +235,10 @@ This project integrates with **The Movie Database (TMDb) API**.
 1. Visit [TMDb Settings](https://www.themoviedb.org/settings/api)
 2. Create an API account
 3. Generate your API key
-4. Add to `src/App.jsx`:
-   ```javascript
-   const API_KEY = "your_api_key_here";
+4. Add to `.env` file:
    ```
-
-### API Features:
-- Real-time movie database access
-- 500+ movie posters & backdrops
-- Comprehensive genre & keyword mapping
-- Multi-language support
+   VITE_TMDB_API_KEY=your_api_key_here
+   ```
 
 ---
 
@@ -249,36 +253,29 @@ npm run lint     # ✅ Run ESLint code quality checks
 
 ---
 
-## 🎯 Key Features Deep Dive
+## 🧮 Scoring Algorithm Deep Dive
 
-### Smart Search Algorithm
-- **Genre Mapping** – 20+ genres with ID lookup
-- **Mood Recognition** – 9+ emotional states
-- **Keyword Matching** – 15+ cinematic themes
-- **Regional Filtering** – 6+ cinema industries
-- **Decade Selection** – 5 major film eras
+### Bayesian Weighted Rating
+```
+WR = (v / (v + m)) × R + (m / (v + m)) × C
 
-### Intelligent Ranking
-Movies are ranked by:
-- **Rating × Popularity** – Quality score formula
-- **Vote Count** – Logarithmic weighting
-- **Relevance** – Keyword match strength
+v = number of votes for the movie
+m = minimum votes threshold (dynamic)
+R = average rating for the movie
+C = mean rating across the dataset
+```
 
-### User Experience
-- **Responsive Design** – Mobile to desktop
-- **Instant Feedback** – Loading states
-- **Error Handling** – Graceful fallbacks
-- **Smooth Animations** – Floating posters
+### Composite Relevance Score (0-100)
+| Signal | Weight | Method |
+|--------|--------|--------|
+| Title Match | 25% | Levenshtein similarity |
+| Bayesian Rating | 30% | WR formula above |
+| Popularity | 15% | Log-normalized |
+| Freshness | 10% | Exponential decay |
+| Genre Boost | 20% | Jaccard overlap |
 
----
-
-## 🎬 Supported Genres & Moods
-
-**Genres:** Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance, Sci-Fi, Thriller, War, Western
-
-**Moods:** Happy, Sad, Scary, Tense, Romantic, Feel-Good, Emotional, Exciting
-
-**Themes:** Plot Twist, Cyberpunk, Space Opera, Heist, Noir, Time Travel, Superhero, Martial Arts, and more...
+### Diversity: Maximal Marginal Relevance (MMR)
+Prevents result monotony by penalizing movies too similar to already-selected results. Lambda parameter balances relevance vs. diversity.
 
 ---
 
@@ -294,13 +291,6 @@ We love contributions! Here's how you can help:
 5. 🔄 Open a Pull Request
 ```
 
-**Ideas for contributions:**
-- New genre/mood combinations
-- Performance optimizations
-- UI/UX improvements
-- Bug fixes
-- Documentation enhancements
-
 ---
 
 ## 📄 License
@@ -315,13 +305,13 @@ MIT License © 2025 Karan-g-2003
 
 ## 🌟 Showcase
 
-> "Cine-GPT changed how I discover movies. The AI understands my taste better than friends!" – A satisfied user
+> "The Great Movie Vault changed how I discover movies. The algorithm understands my taste better than friends!" – A satisfied user
 
 ---
 
 <div align="center">
 
-### 🎬 Ready to Discover Your Next Favorite Film?
+### 🎬 Ready to Discover Your Next Favourite Film?
 
 ```
 Start Exploring Now → https://github.com/Karan-g-2003/cine-gpt
@@ -329,7 +319,7 @@ Start Exploring Now → https://github.com/Karan-g-2003/cine-gpt
 
 **Made with 💚 and 🎥 by Karan**
 
-⭐ If you love Cine-GPT, consider giving us a star on GitHub! ⭐
+⭐ If you love The Great Movie Vault, consider giving us a star on GitHub! ⭐
 
 ```
     🌟 NEON DREAMS, PERFECT PICKS 🌟
