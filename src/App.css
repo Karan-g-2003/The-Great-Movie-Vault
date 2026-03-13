@@ -2,44 +2,357 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Cine-GPT — Playful Dynamic Design System
+   ============================================================ */
+
+/* ─── BASE ─── */
 body {
-  background-color: #050505;
-  font-family: 'Inter', sans-serif; /* Clean, modern font */
+  background-color: #050508;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
   overflow: hidden;
+  color: #fff;
 }
 
-/* The Floating Animation */
+/* ─── ANIMATED GRADIENT MESH BACKGROUND ─── */
+@keyframes meshShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 50%; }
+  50%  { background-position: 100% 0%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-mesh {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(8, 219, 137, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba(234, 179, 8, 0.04) 0%, transparent 40%);
+  background-size: 200% 200%;
+  animation: meshShift 20s ease-in-out infinite;
+}
+
+/* ─── GLASSMORPHISM ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── 3D TILT MOVIE CARDS ─── */
+.movie-card {
+  perspective: 800px;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+}
+
+.movie-card-inner {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-card:hover .movie-card-inner {
+  box-shadow: 
+    0 20px 40px rgba(8, 219, 137, 0.15),
+    0 0 60px rgba(8, 219, 137, 0.05);
+}
+
+/* Glow overlay on hover */
+.movie-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 219, 137, 0.15) 0%,
+    transparent 50%,
+    rgba(6, 182, 212, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.movie-card:hover::after {
+  opacity: 1;
+}
+
+/* ─── RATING RING ─── */
+.rating-ring {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.rating-ring svg {
+  transform: rotate(-90deg);
+}
+
+.rating-ring-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 3;
+}
+
+.rating-ring-circle {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rating-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ─── FLOATING POSTER ANIMATION ─── */
 @keyframes float {
-  0% { transform: translateY(0px) translateX(0px); }
-  33% { transform: translateY(-20px) translateX(10px); }
-  66% { transform: translateY(10px) translateX(-10px); }
-  100% { transform: translateY(0px) translateX(0px); }
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); }
+  25%  { transform: translateY(-25px) translateX(12px) rotate(1deg); }
+  50%  { transform: translateY(-10px) translateX(-8px) rotate(-0.5deg); }
+  75%  { transform: translateY(15px) translateX(5px) rotate(0.5deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
 }
 
 .floating-poster {
-  animation: float 15s ease-in-out infinite;
+  animation: float 18s ease-in-out infinite;
   transition: all 0.5s ease;
 }
 
-/* Custom Scrollbar */
+/* ─── BREATHING SEARCH BAR ─── */
+@keyframes breathe {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.02); }
+}
+
+.search-glow {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* ─── SKELETON SHIMMER ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.75rem;
+}
+
+/* ─── STAGGERED ENTRANCE ─── */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stagger-enter {
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* ─── GENRE PILL STYLES ─── */
+.genre-pill {
+  background: linear-gradient(135deg, rgba(8, 219, 137, 0.15), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(8, 219, 137, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.genre-pill:hover {
+  background: linear-gradient(135deg, rgba(8, 219, 137, 0.3), rgba(6, 182, 212, 0.2));
+  border-color: rgba(8, 219, 137, 0.5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(8, 219, 137, 0.2);
+}
+
+/* ─── SPARKLE PARTICLES ─── */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%      { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #08DB89;
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── PARALLAX BACKDROP ─── */
+.parallax-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.parallax-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+  filter: blur(60px) saturate(1.5);
+  transform: scale(1.1);
+  transition: opacity 0.8s ease;
+}
+
+/* ─── NEON GLOW UTILITIES ─── */
+.neon-shadow {
+  box-shadow: 0 0 25px rgba(8, 219, 137, 0.15),
+              0 0 50px rgba(8, 219, 137, 0.05);
+}
+
+.neon-border {
+  border: 1px solid rgba(8, 219, 137, 0.3);
+}
+
+.neon-text {
+  text-shadow: 0 0 20px rgba(8, 219, 137, 0.3),
+               0 0 40px rgba(8, 219, 137, 0.1);
+}
+
+/* ─── PULSE ANIMATION ─── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(8, 219, 137, 0.4); }
+  50%      { box-shadow: 0 0 0 10px rgba(8, 219, 137, 0); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ─── SMOOTH PAGE TRANSITION ─── */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.page-enter {
+  animation: pageIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
+  transition: background 0.3s;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #08DB89;
 }
 
-/* Neon Glow Utility */
-.neon-shadow {
-  box-shadow: 0 0 20px rgba(8, 219, 137, 0.15);
+/* ─── TOOLBAR / BUTTONS ─── */
+.btn-primary {
+  background: linear-gradient(135deg, #08DB89, #06b570);
+  color: #000;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.neon-border {
-  border: 1px solid rgba(8, 219, 137, 0.3);
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(8, 219, 137, 0.3);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-ghost:hover {
+  background: rgba(8, 219, 137, 0.1);
+  border-color: rgba(8, 219, 137, 0.3);
+  color: #08DB89;
+}
+
+/* ─── NOTIFICATION TOAST ─── */
+@keyframes toastIn {
+  from { transform: translateX(100%) scale(0.8); opacity: 0; }
+  to   { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+.toast-enter {
+  animation: toastIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* ─── SIDEBAR SLIDE ─── */
+.sidebar-backdrop {
+  transition: opacity 0.3s ease;
+}
+
+/* ─── CARD IMAGE ZOOM ─── */
+.card-img-zoom {
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.movie-card:hover .card-img-zoom {
+  transform: scale(1.12);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .movie-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .genre-pill:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
 }

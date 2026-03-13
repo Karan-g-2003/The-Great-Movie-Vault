@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#08DB89" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#08DB89" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08DB89"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <!-- Glow halo -->
+  <circle cx="32" cy="32" r="30" fill="url(#glow)"/>
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="28" stroke="url(#accent)" stroke-width="2" fill="#0a0a0f"/>
+  <!-- Compass star / clapperboard arms -->
+  <!-- North -->
+  <polygon points="32,8 35,20 29,20" fill="url(#accent)" opacity="0.9"/>
+  <!-- South -->
+  <polygon points="32,56 35,44 29,44" fill="url(#accent)" opacity="0.9"/>
+  <!-- East -->
+  <polygon points="56,32 44,35 44,29" fill="url(#accent)" opacity="0.9"/>
+  <!-- West -->
+  <polygon points="8,32 20,35 20,29" fill="url(#accent)" opacity="0.9"/>
+  <!-- Diagonal accents -->
+  <polygon points="49,15 42,22 46,26" fill="#08DB89" opacity="0.4"/>
+  <polygon points="15,49 22,42 18,38" fill="#08DB89" opacity="0.4"/>
+  <polygon points="49,49 42,42 46,38" fill="#06b6d4" opacity="0.3"/>
+  <polygon points="15,15 22,22 18,26" fill="#06b6d4" opacity="0.3"/>
+  <!-- Center clapperboard -->
+  <rect x="22" y="24" width="20" height="14" rx="2" fill="#0a0a0f" stroke="url(#accent)" stroke-width="1.5"/>
+  <!-- Clapperboard top (hinged part) -->
+  <polygon points="22,24 24,19 40,19 42,24" fill="url(#accent)" opacity="0.85"/>
+  <!-- Clapper stripes -->
+  <line x1="27" y1="19" x2="28.5" y2="24" stroke="#0a0a0f" stroke-width="1.5"/>
+  <line x1="32" y1="19" x2="33.5" y2="24" stroke="#0a0a0f" stroke-width="1.5"/>
+  <line x1="37" y1="19" x2="38.5" y2="24" stroke="#0a0a0f" stroke-width="1.5"/>
+  <!-- Play button in center -->
+  <polygon points="29,28 29,35 37,31.5" fill="#08DB89"/>
+</svg>

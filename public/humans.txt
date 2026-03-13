@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Cine-GPT Team
+Site: https://thegreatmovievault.com
+Contact: hello@thegreatmovievault.com
+
+/* TECHNOLOGY */
+Framework: React 19 + Vite 7
+Styling: Tailwind CSS 3
+Algorithms: Bayesian Weighted Rating, MMR Diversity, Composite Scoring
+API: The Movie Database (TMDB) API v3
+Fonts: Outfit (Google Fonts)
+
+/* SITE */
+Last update: 2026-03-13
+Standards: HTML5, CSS3, ES2022
+Software: Vite, React, Tailwind CSS

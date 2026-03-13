@@ -1,0 +1,147 @@
+# The Great Movie Vault — Full Documentation for AI Systems
+
+> The Great Movie Vault is a free, open-source movie discovery web application. It uses Netflix-level Bayesian scoring algorithms, fuzzy search with typo tolerance, and multi-source recommendation blending to help users discover their next favourite film. No registration required.
+
+---
+
+## Table of Contents
+1. [Overview](#overview)
+2. [How It Works](#how-it-works)
+3. [Search Capabilities](#search-capabilities)
+4. [Recommendation Algorithm](#recommendation-algorithm)
+5. [Features](#features)
+6. [FAQ](#faq)
+7. [Comparison to Alternatives](#comparison-to-alternatives)
+8. [Technical Stack](#technical-stack)
+
+---
+
+## Overview
+
+The Great Movie Vault is a web-based movie discovery platform available at https://thegreatmovievault.com/. It is designed for movie enthusiasts who want to discover films beyond mainstream recommendations. The platform supports searches in natural language, allowing users to type queries like "90s Bollywood comedy", "mind-bending sci-fi", "Korean thriller", or simply an actor's name.
+
+**Key differentiators:**
+- Uses mathematical algorithms (Bayesian Weighted Rating, MMR) rather than simple popularity sorting
+- Supports vibe-based and mood-based search (e.g., "nostalgic", "tense", "jolly")
+- Fuzzy matching tolerates typos (e.g., "incep" finds "Inception")
+- Multi-source recommendation blending combines TMDB recommendations, similar movies, and discovery endpoints
+- Completely free with no registration or subscription required
+- Works in the browser with no installation needed
+
+## How It Works
+
+1. **User enters a search query** — This can be a movie title, actor name, genre, mood, decade, region, keyword, or any combination
+2. **Query is parsed** — The system tokenizes the query and identifies genres, moods, regions, decades, and keywords using fuzzy matching
+3. **Multi-strategy search** — The engine tries a fallback chain: concept discovery (with vote threshold relaxation) → person search → title search with fuzzy matching
+4. **Results are scored** — Each movie receives a composite relevance score combining title match, Bayesian rating, normalized popularity, freshness decay, and genre boost
+5. **Diversity injection** — Maximal Marginal Relevance (MMR) ensures results aren't monotonous
+6. **Weighted shuffle** — Final results are shuffled using Fisher-Yates weighted shuffle for controlled randomness
+7. **Recommendations blend** — Movie detail pages show "Similar Vibes" from 3 sources: TMDB /recommendations, /similar, and scored ranking
+
+## Search Capabilities
+
+### By Genre
+Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance, Sci-Fi, Thriller, War, Western
+
+### By Mood / Emotion
+Sad, Happy, Funny, Scary, Tense, Love, Feel-good, Emotional, Exciting, Jolly, Joyful, Cheerful, Lighthearted, Uplifting, Heartwarming, Lonely, Nostalgic, Rage, Furious, Calm
+
+### By Region / Language
+Bollywood (Hindi), Hollywood (English), Korean, Japanese, French, Tamil, Telugu, Spanish, Chinese, German
+
+### By Decade
+80s, 90s, 2000s, 2010s, Classic (1950-1979)
+
+### By Keyword / Theme
+Mind-bending, Psychological, Plot Twist, Cyberpunk, Dystopian, Space, Alien, Gangster, Mafia, Whodunit, Serial Killer, Noir, Time Travel, Superhero, Vampire, Zombie, Heist, Cult, Surreal, Revenge, Martial Arts, Sports, Politics
+
+### Combined Queries
+Users can combine any of the above: "90s crime thriller", "Korean horror", "feel-good Bollywood comedy", "mind-bending 2010s sci-fi"
+
+## Recommendation Algorithm
+
+### Bayesian Weighted Rating (WR)
+Formula: `WR = (v / (v + m)) × R + (m / (v + m)) × C`
+- v = number of votes for the movie
+- m = minimum votes required (dynamic threshold)
+- R = average rating for the movie
+- C = mean rating across the dataset
+
+This is the same formula used by IMDB for its Top 250 list. It prevents movies with very few but perfect ratings from dominating results.
+
+### Composite Relevance Score
+Each movie receives a score from 0-100 based on weighted signals:
+- Title match (Levenshtein similarity): 25%
+- Bayesian rating: 30%
+- Popularity (log-normalized): 15%
+- Freshness (exponential decay): 10%
+- Genre boost: 20%
+
+### Maximal Marginal Relevance (MMR)
+Prevents result monotony by penalizing movies too similar to already-selected results. Uses a lambda parameter to balance relevance vs. diversity.
+
+### Fisher-Yates Weighted Shuffle
+Final results are shuffled with probability proportional to their scores, providing controlled randomness that keeps results fresh across repeat searches.
+
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| Smart Search | Natural language search with fuzzy matching and typo tolerance |
+| Vibe-Based Discovery | Search by mood, emotion, or aesthetic (e.g., "nostalgic", "cyberpunk") |
+| Personal Watchlist | Save movies to watch later (stored locally, no account needed) |
+| Custom Libraries | Create themed collections (e.g., "Sci-Fi Favorites", "Date Night") |
+| Streaming Info | See where to watch each movie (Netflix, Prime, Disney+, etc.) |
+| Trailer Playback | Watch trailers directly on the movie detail page |
+| Cast & Crew | View director, starring cast with photos and character names |
+| Similar Vibes | Multi-source recommendations for each movie |
+| Search History | Quickly revisit previous searches |
+| Keyboard Navigation | Arrow keys to navigate autocomplete, Enter to select |
+| Taste Profile | System learns your genre, region, and decade preferences over time |
+
+## FAQ
+
+**Q: What is The Great Movie Vault?**
+A: A free movie discovery platform that uses advanced mathematical algorithms to help you find movies based on your mood, genre preference, favourite actors, or any vibe you describe.
+
+**Q: How is it different from IMDB or Letterboxd?**
+A: Unlike IMDB which sorts by popularity or rating, The Great Movie Vault uses Bayesian scoring with diversity injection (MMR) to surface hidden gems alongside popular titles. It also supports natural language vibe-based search.
+
+**Q: Is it free?**
+A: Yes, completely free with no registration or subscription required.
+
+**Q: Does it work on mobile?**
+A: Yes, the platform is fully responsive and works on all devices and screen sizes.
+
+**Q: Where does the data come from?**
+A: All movie data is sourced from The Movie Database (TMDB), a community-built database with information on hundreds of thousands of titles.
+
+**Q: Can I save movies?**
+A: Yes, you can add movies to your watchlist or create custom libraries. Data is stored locally in your browser.
+
+**Q: What regions does it support?**
+A: It supports movies from Bollywood, Hollywood, Korean, Japanese, French, Tamil, Telugu, Spanish, Chinese, and German cinema.
+
+## Comparison to Alternatives
+
+| Feature | Movie Vault | IMDB | Letterboxd | JustWatch |
+|---------|:-----------:|:----:|:----------:|:---------:|
+| Free | ✅ | ✅ | Partial | ✅ |
+| No Account Required | ✅ | ❌ | ❌ | ❌ |
+| Vibe/Mood Search | ✅ | ❌ | ❌ | ❌ |
+| Bayesian Scoring | ✅ | ❌ | ❌ | ❌ |
+| Diversity Algorithm (MMR) | ✅ | ❌ | ❌ | ❌ |
+| Fuzzy/Typo Search | ✅ | Limited | ❌ | ❌ |
+| Multi-Region Support | ✅ | ✅ | ✅ | ✅ |
+| Streaming Providers | ✅ | ✅ | ❌ | ✅ |
+| Custom Libraries | ✅ | ✅ | ✅ | ✅ |
+
+## Technical Stack
+
+- **Frontend:** React 19, Vite 7, Tailwind CSS 3
+- **API:** The Movie Database (TMDB) v3
+- **Algorithms:** Bayesian Weighted Rating, Levenshtein Distance, Maximal Marginal Relevance, Fisher-Yates Shuffle
+- **Storage:** Browser localStorage with quota management
+- **Design:** Glassmorphism, 3D card effects, animated gradient mesh, SVG rating rings
+- **Fonts:** Outfit (Google Fonts)
+- **License:** Open Source

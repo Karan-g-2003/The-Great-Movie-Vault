@@ -1,0 +1,60 @@
+# The Great Movie Vault
+
+> A free, open-source movie discovery platform that helps users find their next favourite film using Netflix-level Bayesian scoring algorithms. Search by genre, mood, vibe, decade, region, or actor name.
+
+## What This Site Does
+
+The Great Movie Vault is a web application for discovering movies. It uses advanced algorithms including Bayesian Weighted Rating (IMDB Top 250 formula), Maximal Marginal Relevance for result diversity, and composite multi-signal scoring to recommend films. Users can search using natural language queries like "90s crime thriller", "feel-good Bollywood", "mind-bending sci-fi", or any actor/director name.
+
+## Key Features
+
+- Smart movie search with fuzzy matching and typo tolerance
+- Bayesian-scored recommendations that rival Netflix
+- Search by genre, mood, vibe, decade, region, or keyword
+- Multi-source recommendation blending (TMDB recommendations + similar + discovery)
+- Personal watchlist and custom library management
+- Streaming provider information (where to watch)
+- Trailer playback
+- User taste profile that learns from search behavior
+
+## Core Pages
+
+- [Home / Search](https://thegreatmovievault.com/): Main search interface with vibe-based discovery
+- [Movie Detail](https://thegreatmovievault.com/#movie): Detailed movie page with cast, streaming, trailer, and similar films
+- [Watchlist](https://thegreatmovievault.com/#watchlist): User's saved movies to watch later
+- [Libraries](https://thegreatmovievault.com/#libraries): Custom collections organized by user
+
+## Technology
+
+- Built with React 19 and Vite 7
+- Powered by The Movie Database (TMDB) API
+- Scoring engine: Bayesian Weighted Rating, Levenshtein fuzzy matching, MMR diversity injection, Fisher-Yates weighted shuffle
+- Styling: Tailwind CSS with custom glassmorphism design system
+- Storage: localStorage with quota management and slim movie serialization
+
+## Frequently Asked Questions
+
+### What is The Great Movie Vault?
+The Great Movie Vault is a free movie discovery platform that uses advanced algorithms to help you find movies based on your mood, preferred genre, favourite actors, or any vibe you describe in natural language.
+
+### How does the recommendation algorithm work?
+We use a multi-signal composite scoring engine that combines Bayesian Weighted Rating (the same formula IMDB uses for its Top 250), popularity normalization, freshness decay, genre matching, and Maximal Marginal Relevance (MMR) for diversity. Results are then shuffled using a Fisher-Yates weighted shuffle for controlled randomness.
+
+### What can I search for?
+You can search for movies by title, actor name, director name, genre (action, comedy, horror), mood (sad, funny, scary, tense), vibe (mind-bending, cyberpunk, noir), decade (80s, 90s, 2000s), region (Bollywood, Korean, Japanese, French), or keywords (plot twist, time travel, heist). You can even combine them: "90s Bollywood comedy" or "Korean thriller".
+
+### Is it free to use?
+Yes, The Great Movie Vault is completely free to use with no registration required.
+
+### Where does the movie data come from?
+All movie data is sourced from The Movie Database (TMDB), a community-built movie and TV database with information on hundreds of thousands of titles.
+
+### Can I save movies for later?
+Yes, you can add movies to your personal watchlist or create custom libraries to organize your favourites.
+
+### Does it show where to stream movies?
+Yes, each movie detail page shows available streaming providers (Netflix, Amazon Prime, Disney+, etc.) based on your region.
+
+## Optional
+
+- [Source Code](https://github.com/Karan-g-2003/cine-gpt): GitHub repository

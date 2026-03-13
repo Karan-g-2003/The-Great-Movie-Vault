@@ -1,0 +1,5 @@
+# Security Policy for The Great Movie Vault
+Contact: mailto:security@thegreatmovievault.com
+Preferred-Languages: en
+Canonical: https://thegreatmovievault.com/.well-known/security.txt
+Policy: https://thegreatmovievault.com/security-policy

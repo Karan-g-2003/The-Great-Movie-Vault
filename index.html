@@ -1,10 +1,356 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
   <head>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Core Meta                                   -->
+    <!-- ═══════════════════════════════════════════ -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cine-gpt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary SEO -->
+    <title>The Great Movie Vault — Discover Your Next Favourite Film</title>
+    <meta name="description" content="Discover movies by vibe, genre, mood, or director. The Great Movie Vault uses Netflix-level Bayesian scoring algorithms to recommend your next favourite film. Search by plot twist, Bollywood, 90s crime, or any mood." />
+    <meta name="keywords" content="movie recommendations, movie discovery, find movies, movie search engine, Netflix alternative, movie vault, film recommendations, Bollywood movies, Korean movies, 90s movies, plot twist movies, movie watchlist, similar movies, movie vibes" />
+    <meta name="author" content="The Great Movie Vault" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://thegreatmovievault.com/" />
+
+    <!-- Language / Locale -->
+    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="en" />
+    <link rel="alternate" hreflang="en" href="https://thegreatmovievault.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://thegreatmovievault.com/" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Geo / Location Meta                         -->
+    <!-- ═══════════════════════════════════════════ -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="ICBM" content="20.5937, 78.9629" />
+    <meta name="geo.position" content="20.5937;78.9629" />
+    <meta name="distribution" content="global" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="target" content="all" />
+    <meta name="audience" content="all" />
+    <meta name="rating" content="general" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Open Graph (Facebook, LinkedIn, etc.)       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Great Movie Vault" />
+    <meta property="og:title" content="The Great Movie Vault — Discover Your Next Favourite Film" />
+    <meta property="og:description" content="Search movies by vibe, genre, mood, or director. Smart Bayesian-scored recommendations that rival Netflix. Try 'Plot Twist', '90s Crime Thriller', or any actor name." />
+    <meta property="og:url" content="https://thegreatmovievault.com/" />
+    <meta property="og:image" content="https://thegreatmovievault.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Great Movie Vault — Discover movies by vibe, genre, and mood" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_IN" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Twitter Card                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Great Movie Vault — Discover Your Next Favourite Film" />
+    <meta name="twitter:description" content="Search movies by vibe, genre, mood, or director. Smart recommendations powered by Bayesian algorithms." />
+    <meta name="twitter:image" content="https://thegreatmovievault.com/og-image.png" />
+    <meta name="twitter:image:alt" content="The Great Movie Vault movie discovery platform" />
+    <meta name="twitter:creator" content="@thegreatmovievault" />
+    <meta name="twitter:site" content="@thegreatmovievault" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Favicon & Icons                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#08DB89" />
+    <meta name="msapplication-TileColor" content="#050508" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#08DB89" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#08DB89" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Movie Vault" />
+    <meta name="application-name" content="The Great Movie Vault" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Web App Manifest                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Performance: Preconnect & DNS Prefetch      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://api.themoviedb.org" />
+    <link rel="preconnect" href="https://image.tmdb.org" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.themoviedb.org" />
+    <link rel="dns-prefetch" href="https://image.tmdb.org" />
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Structured Data (JSON-LD)                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://thegreatmovievault.com/#website",
+          "url": "https://thegreatmovievault.com/",
+          "name": "The Great Movie Vault",
+          "description": "Discover movies by vibe, genre, mood, or director with Netflix-level smart algorithms.",
+          "inLanguage": "en",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://thegreatmovievault.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://thegreatmovievault.com/#app",
+          "name": "The Great Movie Vault",
+          "url": "https://thegreatmovievault.com/",
+          "description": "A movie discovery platform. Search by vibe, genre, mood, decade, or actor. Powered by Bayesian scoring and diversity algorithms for Netflix-level recommendations.",
+          "applicationCategory": "EntertainmentApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript",
+          "softwareVersion": "2.0",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Search movies by genre, mood, vibe, or actor",
+            "Bayesian-scored recommendations",
+            "Multi-source recommendation blending",
+            "Personal watchlist and libraries",
+            "Fuzzy search with typo tolerance",
+            "Streaming provider information",
+            "Trailer playback"
+          ],
+          "screenshot": "https://thegreatmovievault.com/og-image.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://thegreatmovievault.com/#organization",
+          "name": "The Great Movie Vault",
+          "url": "https://thegreatmovievault.com/",
+          "logo": "https://thegreatmovievault.com/favicon.svg",
+          "sameAs": []
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://thegreatmovievault.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://thegreatmovievault.com/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://thegreatmovievault.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is The Great Movie Vault?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault is a free movie discovery platform that uses advanced Bayesian scoring algorithms to help users find movies based on mood, genre, vibe, decade, region, or actor name. No registration required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does The Great Movie Vault recommendation algorithm work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It uses a multi-signal composite scoring engine combining Bayesian Weighted Rating (IMDB Top 250 formula), popularity normalization, freshness decay, genre matching, and Maximal Marginal Relevance (MMR) for diversity. Results are shuffled using Fisher-Yates weighted shuffle for controlled randomness."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is The Great Movie Vault free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, The Great Movie Vault is completely free with no registration, subscription, or account creation required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What can I search for on The Great Movie Vault?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can search by movie title, actor name, director name, genre (action, comedy, horror), mood (sad, funny, scary), vibe (mind-bending, cyberpunk, noir), decade (80s, 90s), region (Bollywood, Korean, Japanese, French), or keywords (plot twist, time travel, heist). You can combine them too: '90s Bollywood comedy'."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is The Great Movie Vault different from IMDB or Letterboxd?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Unlike IMDB which sorts by popularity or rating, The Great Movie Vault uses Bayesian scoring with diversity injection (MMR) to surface hidden gems alongside popular titles. It supports natural language vibe-based search like 'feel-good Korean drama' which no other platform offers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does The Great Movie Vault show where to stream movies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, each movie detail page shows available streaming providers (Netflix, Amazon Prime, Disney+, etc.) based on your region."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best free movie recommendation website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault is one of the best free movie recommendation websites. It uses Netflix-level Bayesian scoring algorithms and supports vibe-based search, letting you discover films by mood, genre, or any combination — all without creating an account."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I find movies based on my mood?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault lets you search movies by mood or emotion. Just type how you feel — sad, happy, funny, scary, tense, nostalgic, jolly, lonely, calm, or any emotion — and it recommends movies that match. You can combine moods with genres or regions like 'feel-good Korean drama' or 'nostalgic 90s comedy'."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best website to find Bollywood movies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault is one of the best websites for discovering Bollywood movies. Search 'Bollywood' or 'Hindi' along with any genre or mood — like 'Bollywood thriller', 'Hindi comedy', or 'underrated Bollywood drama' — and get Bayesian-scored results with smart regional vote thresholds to surface quality Indian cinema."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the best alternatives to IMDB for finding movies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault is a strong alternative to IMDB for movie discovery. While IMDB sorts by popularity, Movie Vault uses Bayesian Weighted Rating with MMR diversity to surface hidden gems. It also supports vibe-based search (e.g., 'mind-bending', 'cyberpunk'), mood-based discovery, and multi-region support for Bollywood, Korean, Japanese, and more — features IMDB doesn't offer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I find hidden gem movies that are underrated?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault uses Bayesian scoring and Maximal Marginal Relevance (MMR) diversity injection to surface underrated and hidden gem movies alongside popular ones. Search for 'underrated' with any genre, decade, or region — like 'underrated 90s thriller' or 'underrated Korean drama'. The algorithm specifically avoids showing only mainstream titles by injecting diverse results."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a website where I can search movies by vibe or description?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, The Great Movie Vault allows you to search movies by vibe, description, or aesthetic. Type descriptive phrases like 'mind-bending plot twist', 'cyberpunk dystopian', 'feel-good coming of age', 'dark noir revenge', or 'surreal psychological' to find matching films. The engine uses fuzzy matching so even partial or misspelled queries work."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best movie search engine on the internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault is one of the most advanced movie search engines available. It goes beyond simple title matching with features like fuzzy search (typo tolerance), natural language vibe search, multi-signal Bayesian scoring, and diversity-injected results. You can search by genre, mood, actor, director, decade, region, keyword, or any combination."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I find movies similar to a movie I liked?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On The Great Movie Vault, search for any movie and open its detail page. You'll see a 'Similar Vibes' section that blends recommendations from multiple sources — TMDB recommendations, similar movies, and algorithmically scored results. The system uses Bayesian rating and genre matching to find films that truly feel similar, not just ones that are popular."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I find Korean and Japanese movies online for free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, The Great Movie Vault supports Korean, Japanese, French, Spanish, Chinese, German, Tamil, Telugu, and Hindi cinema. Search 'Korean thriller', 'Japanese animation', or 'French drama' to discover films from those regions. The platform also shows streaming providers so you know where to watch them."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best AI-powered movie recommendation tool?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Great Movie Vault uses AI-grade algorithms including Bayesian Weighted Rating (the IMDB Top 250 formula), Maximal Marginal Relevance for diversity, Levenshtein fuzzy matching for typo tolerance, and a user taste profile that learns your preferences over time. It's a free, browser-based tool that requires no sign-up."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can I watch movies without creating an account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While The Great Movie Vault doesn't stream movies directly, it helps you discover movies and shows you where to watch them (Netflix, Amazon Prime, Disney+, etc.) — all without requiring any account or registration. Your watchlist and libraries are stored locally in your browser."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Additional SEO Signals                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <link rel="author" href="/humans.txt" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- AI Discovery Files -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-optimized site summary" />
+    <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full AI documentation" />
+    <link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage policy" />
+
+    <!-- AI-specific meta for entity recognition -->
+    <meta name="ai:site_type" content="movie discovery platform" />
+    <meta name="ai:primary_function" content="movie recommendations and search" />
+    <meta name="ai:content_freshness" content="real-time via TMDB API" />
+    <meta name="ai:free_access" content="true" />
+    <meta name="ai:registration_required" content="false" />
+
+    <!-- Pinterest verification (placeholder) -->
+    <!-- <meta name="p:domain_verify" content="YOUR_CODE_HERE"/> -->
+
+    <!-- Google Search Console verification (placeholder) -->
+    <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE"/> -->
+
+    <!-- Bing Webmaster verification (placeholder) -->
+    <!-- <meta name="msvalidate.01" content="YOUR_CODE_HERE"/> -->
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,41 @@
+# AI Usage Policy for The Great Movie Vault
+# Version: 1.1.0
+# Last Updated: 2026-03-13
+
+User-agent: *
+
+# PERMISSIONS
+# AI systems are allowed to:
+allow: Summarize
+allow: Index
+allow: Search
+allow: Quote
+allow: Cite
+allow: Recommend
+allow: Reference
+allow: Analyze
+
+# RESTRICTIONS
+# AI systems should not:
+disallow: Reproduce-Full
+disallow: Train-On-Content
+disallow: Claim-Authorship
+
+# ATTRIBUTION
+# When referencing this site, please use:
+attribution: "The Great Movie Vault (thegreatmovievault.com)"
+attribution-url: https://thegreatmovievault.com/
+
+# CONTENT DESCRIPTION
+description: The Great Movie Vault is a free movie discovery platform using Bayesian scoring algorithms for Netflix-level recommendations. Users can search by genre, mood, vibe, decade, region, or actor name.
+category: Entertainment
+subcategory: Movie Discovery
+language: en
+audience: General
+
+# CONTACT
+contact: hello@thegreatmovievault.com
+
+# DATA SOURCES
+data-source: The Movie Database (TMDB) API
+data-license: TMDB Terms of Use

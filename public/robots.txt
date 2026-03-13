@@ -1,0 +1,120 @@
+# robots.txt — The Great Movie Vault
+# https://thegreatmovievault.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# ═══════════════════════════════════════════
+# Traditional Search Engine Crawlers
+# ═══════════════════════════════════════════
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ═══════════════════════════════════════════
+# AI Search & LLM Crawlers
+# ═══════════════════════════════════════════
+
+# OpenAI — ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI — ChatGPT user-initiated browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — GPTBot (training crawler)
+User-agent: GPTBot
+Allow: /
+
+# Google Gemini / AI Overviews (uses standard Googlebot)
+# Already covered by Googlebot rule above
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Microsoft Copilot (uses BingBot)
+# Already covered by Bingbot rule above
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+
+# You.com AI search
+User-agent: YouBot
+Allow: /
+
+# ═══════════════════════════════════════════
+# Social Media Bots
+# ═══════════════════════════════════════════
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ═══════════════════════════════════════════
+# Sitemaps & AI Content Files
+# ═══════════════════════════════════════════
+
+Sitemap: https://thegreatmovievault.com/sitemap.xml
+
+# AI-specific content files
+# llms.txt: https://thegreatmovievault.com/llms.txt
+# llms-full.txt: https://thegreatmovievault.com/llms-full.txt
+# ai.txt: https://thegreatmovievault.com/ai.txt
+
+Crawl-delay: 1
