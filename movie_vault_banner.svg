@@ -1,0 +1,311 @@
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" width="900" height="320">
+  <defs>
+    <style>
+      /* Film grain overlay flicker */
+      @keyframes grain {
+        0%,100% { opacity: 0.04; }
+        50%      { opacity: 0.08; }
+      }
+      /* Spotlight sweep */
+      @keyframes spot1 {
+        0%   { opacity: 0.12; transform: rotate(-30deg) translateX(0px); }
+        50%  { opacity: 0.22; transform: rotate(-30deg) translateX(60px); }
+        100% { opacity: 0.12; transform: rotate(-30deg) translateX(0px); }
+      }
+      @keyframes spot2 {
+        0%   { opacity: 0.08; transform: rotate(30deg) translateX(0px); }
+        50%  { opacity: 0.18; transform: rotate(30deg) translateX(-60px); }
+        100% { opacity: 0.08; transform: rotate(30deg) translateX(0px); }
+      }
+      /* Stars twinkle */
+      @keyframes twinkle1 { 0%,100%{opacity:0.9;r:1.2} 50%{opacity:0.2;r:0.6} }
+      @keyframes twinkle2 { 0%,100%{opacity:0.5;r:0.8} 50%{opacity:1;r:1.4} }
+      @keyframes twinkle3 { 0%,100%{opacity:0.7;r:1} 33%{opacity:0.1;r:0.5} 66%{opacity:0.9;r:1.2} }
+      /* Title reveal */
+      @keyframes title-in {
+        0%   { opacity:0; letter-spacing: 28px; }
+        100% { opacity:1; letter-spacing: 6px; }
+      }
+      @keyframes sub-in {
+        0%   { opacity:0; transform: translateY(10px); }
+        100% { opacity:1; transform: translateY(0px); }
+      }
+      /* Gold shimmer on title */
+      @keyframes shimmer {
+        0%   { stop-color: #f59e0b; }
+        25%  { stop-color: #fde68a; }
+        50%  { stop-color: #f59e0b; }
+        75%  { stop-color: #fbbf24; }
+        100% { stop-color: #f59e0b; }
+      }
+      @keyframes shimmer2 {
+        0%   { stop-color: #92400e; }
+        25%  { stop-color: #f59e0b; }
+        50%  { stop-color: #78350f; }
+        75%  { stop-color: #d97706; }
+        100% { stop-color: #92400e; }
+      }
+      /* Film strip scroll */
+      @keyframes film-scroll {
+        0%   { transform: translateX(0px); }
+        100% { transform: translateX(-120px); }
+      }
+      /* Reel spin */
+      @keyframes reel-spin {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      /* Curtain wave */
+      @keyframes curtain-l {
+        0%,100% { d: path('M0,0 Q30,160 0,320 L0,320 L0,0 Z'); }
+        50%      { d: path('M0,0 Q50,160 0,320 L0,320 L0,0 Z'); }
+      }
+      @keyframes curtain-r {
+        0%,100% { d: path('M900,0 Q870,160 900,320 L900,320 L900,0 Z'); }
+        50%      { d: path('M900,0 Q850,160 900,320 L900,320 L900,0 Z'); }
+      }
+      /* Floating particles */
+      @keyframes float1 { 0%,100%{transform:translate(0,0);opacity:0.6} 50%{transform:translate(8px,-18px);opacity:1} }
+      @keyframes float2 { 0%,100%{transform:translate(0,0);opacity:0.4} 50%{transform:translate(-12px,-14px);opacity:0.8} }
+      @keyframes float3 { 0%,100%{transform:translate(0,0);opacity:0.7} 50%{transform:translate(6px,-22px);opacity:0.3} }
+      /* Tagline blink cursor */
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      /* Badge pulse */
+      @keyframes badge-pulse { 0%,100%{opacity:0.8} 50%{opacity:1} }
+      /* Bottom bar shimmer */
+      @keyframes bar-shine {
+        0%   { x: -300px; }
+        100% { x: 900px; }
+      }
+
+      .star1 { animation: twinkle1 2.1s ease-in-out infinite; }
+      .star2 { animation: twinkle2 3.4s ease-in-out infinite; }
+      .star3 { animation: twinkle3 1.8s ease-in-out infinite; }
+      .spot-l { animation: spot1 6s ease-in-out infinite; transform-origin: 200px 340px; }
+      .spot-r { animation: spot2 7s ease-in-out 1s infinite; transform-origin: 700px 340px; }
+      .film-strip { animation: film-scroll 3s linear infinite; }
+      .reel { animation: reel-spin 4s linear infinite; transform-origin: 50% 50%; }
+      .title-text { animation: title-in 1.4s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+      .sub-text { animation: sub-in 1s ease-out 1.4s both; }
+      .tagline { animation: sub-in 1s ease-out 1.8s both; }
+      .badge { animation: badge-pulse 2s ease-in-out infinite; }
+      .p1 { animation: float1 4s ease-in-out infinite; }
+      .p2 { animation: float2 5s ease-in-out 1s infinite; }
+      .p3 { animation: float3 3.5s ease-in-out 0.5s infinite; }
+      .curtain-left  { animation: curtain-l 8s ease-in-out infinite; }
+      .curtain-right { animation: curtain-r 8s ease-in-out 1s infinite; }
+      .grain { animation: grain 0.15s steps(1) infinite; }
+      stop.s1 { animation: shimmer  3s ease-in-out infinite; }
+      stop.s2 { animation: shimmer2 3s ease-in-out infinite; }
+    </style>
+
+    <!-- Deep cinematic BG gradient -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#000000"/>
+      <stop offset="40%" stop-color="#0c0a1e"/>
+      <stop offset="100%" stop-color="#1a0a00"/>
+    </linearGradient>
+
+    <!-- Gold shimmer gradient for title -->
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop class="s1" offset="0%"   stop-color="#f59e0b"/>
+      <stop offset="30%"  stop-color="#fde68a"/>
+      <stop class="s2" offset="60%"  stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Spotlight gradient -->
+    <radialGradient id="spotlight" cx="50%" cy="100%" r="70%">
+      <stop offset="0%"  stop-color="#fde68a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Curtain gradient -->
+    <linearGradient id="curtain-grad-l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#3b0000"/>
+      <stop offset="100%" stop-color="#1a0000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="curtain-grad-r" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%"  stop-color="#3b0000"/>
+      <stop offset="100%" stop-color="#1a0000" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Film hole pattern -->
+    <pattern id="film-holes" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+      <rect width="120" height="20" fill="#111"/>
+      <rect x="4"  y="3" width="14" height="14" rx="2" fill="#000"/>
+      <rect x="24" y="3" width="14" height="14" rx="2" fill="#000"/>
+      <rect x="44" y="3" width="14" height="14" rx="2" fill="#000"/>
+      <rect x="64" y="3" width="14" height="14" rx="2" fill="#000"/>
+      <rect x="84" y="3" width="14" height="14" rx="2" fill="#000"/>
+      <rect x="104" y="3" width="14" height="14" rx="2" fill="#000"/>
+    </pattern>
+
+    <!-- Bar shine mask -->
+    <linearGradient id="shine-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="title-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <!-- ══ BG ══ -->
+  <rect width="900" height="320" fill="url(#bg-grad)"/>
+  <rect width="900" height="320" fill="url(#spotlight)"/>
+
+  <!-- Stars -->
+  <circle class="star1" cx="80"  cy="40"  r="1.2" fill="white"/>
+  <circle class="star2" cx="160" cy="25"  r="0.8" fill="white"/>
+  <circle class="star3" cx="240" cy="55"  r="1"   fill="white"/>
+  <circle class="star2" cx="340" cy="18"  r="1.4" fill="#fde68a"/>
+  <circle class="star1" cx="440" cy="35"  r="0.9" fill="white"/>
+  <circle class="star3" cx="520" cy="20"  r="1.1" fill="white"/>
+  <circle class="star2" cx="620" cy="42"  r="0.7" fill="#fde68a"/>
+  <circle class="star1" cx="720" cy="28"  r="1.3" fill="white"/>
+  <circle class="star3" cx="820" cy="50"  r="0.8" fill="white"/>
+  <circle class="star1" cx="860" cy="15"  r="1"   fill="white"/>
+  <circle class="star2" cx="50"  cy="70"  r="0.6" fill="white"/>
+  <circle class="star3" cx="770" cy="70"  r="0.9" fill="#fde68a"/>
+
+  <!-- Spotlights -->
+  <rect class="spot-l" x="120" y="-20" width="80" height="400" fill="#fde68a" opacity="0.08" transform="rotate(-25 200 340)"/>
+  <rect class="spot-r" x="680" y="-20" width="80" height="400" fill="#fde68a" opacity="0.06" transform="rotate(25 700 340)"/>
+
+  <!-- ══ FILM STRIP TOP ══ -->
+  <g class="film-strip">
+    <rect x="-120" y="0" width="1140" height="22" fill="url(#film-holes)"/>
+  </g>
+  <!-- Gold line under film strip -->
+  <line x1="0" y1="22" x2="900" y2="22" stroke="#f59e0b" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- ══ FILM STRIP BOTTOM ══ -->
+  <g class="film-strip">
+    <rect x="-120" y="298" width="1140" height="22" fill="url(#film-holes)"/>
+  </g>
+  <line x1="0" y1="298" x2="900" y2="298" stroke="#f59e0b" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- ══ CURTAINS ══ -->
+  <path class="curtain-left" d="M0,0 Q40,160 0,320 L0,320 L0,0 Z" fill="url(#curtain-grad-l)" opacity="0.85"/>
+  <path class="curtain-right" d="M900,0 Q860,160 900,320 L900,320 L900,0 Z" fill="url(#curtain-grad-r)" opacity="0.85"/>
+  <!-- Curtain rope detail -->
+  <line x1="68" y1="22" x2="68" y2="298" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="68" cy="160" r="5" fill="#f59e0b" opacity="0.5"/>
+  <line x1="832" y1="22" x2="832" y2="298" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="832" cy="160" r="5" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- ══ FILM REEL LEFT ══ -->
+  <g transform="translate(108, 160)">
+    <g class="reel">
+      <circle r="28" fill="none" stroke="#92400e" stroke-width="3"/>
+      <circle r="10" fill="#1a0a00" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="0" y1="-28" x2="0" y2="28" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-28" y1="0" x2="28" y2="0" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#92400e" stroke-width="1" opacity="0.4"/>
+      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#92400e" stroke-width="1" opacity="0.4"/>
+      <!-- sprockets -->
+      <circle cx="0"   cy="-22" r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="0"   cy="22"  r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="-22" cy="0"   r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="22"  cy="0"   r="3.5" fill="#f59e0b" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ══ FILM REEL RIGHT ══ -->
+  <g transform="translate(792, 160)">
+    <g class="reel" style="animation-direction: reverse;">
+      <circle r="28" fill="none" stroke="#92400e" stroke-width="3"/>
+      <circle r="10" fill="#1a0a00" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="0" y1="-28" x2="0" y2="28" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-28" y1="0" x2="28" y2="0" stroke="#92400e" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#92400e" stroke-width="1" opacity="0.4"/>
+      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#92400e" stroke-width="1" opacity="0.4"/>
+      <circle cx="0"   cy="-22" r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="0"   cy="22"  r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="-22" cy="0"   r="3.5" fill="#f59e0b" opacity="0.7"/>
+      <circle cx="22"  cy="0"   r="3.5" fill="#f59e0b" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ══ MAIN TITLE ══ -->
+  <!-- Glow layer -->
+  <text class="title-text" x="450" y="138" text-anchor="middle"
+        font-family="Georgia, serif" font-size="52" font-weight="bold"
+        fill="#f59e0b" opacity="0.25" filter="url(#title-glow)"
+        letter-spacing="6">THE GREAT MOVIE VAULT</text>
+  <!-- Main gold text -->
+  <text class="title-text" x="450" y="138" text-anchor="middle"
+        font-family="Georgia, serif" font-size="52" font-weight="bold"
+        fill="url(#gold-grad)" letter-spacing="6">THE GREAT MOVIE VAULT</text>
+
+  <!-- ══ DIVIDER ══ -->
+  <g class="sub-text">
+    <line x1="160" y1="152" x2="350" y2="152" stroke="#f59e0b" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="450" cy="152" r="3" fill="#f59e0b" opacity="0.8"/>
+    <line x1="550" y1="152" x2="740" y2="152" stroke="#f59e0b" stroke-width="0.8" opacity="0.5"/>
+  </g>
+
+  <!-- ══ TAGLINE ══ -->
+  <text class="tagline" x="450" y="178" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="15"
+        fill="#fde68a" letter-spacing="3" font-style="italic">
+    Neon Dreams. Perfect Picks. Every Time.
+  </text>
+
+  <!-- ══ TECH BADGES ══ -->
+  <g class="sub-text">
+    <!-- React -->
+    <rect x="200" y="198" width="70" height="20" rx="10" fill="#0c0a1e" stroke="#61dafb" stroke-width="0.8" opacity="0.9"/>
+    <text x="235" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#61dafb">⚛ React 19</text>
+    <!-- Vite -->
+    <rect x="278" y="198" width="56" height="20" rx="10" fill="#0c0a1e" stroke="#a78bfa" stroke-width="0.8" opacity="0.9"/>
+    <text x="306" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#a78bfa">⚡ Vite 7</text>
+    <!-- TMDb -->
+    <rect x="342" y="198" width="66" height="20" rx="10" fill="#0c0a1e" stroke="#01b4e4" stroke-width="0.8" opacity="0.9"/>
+    <text x="375" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#01b4e4">🎬 TMDb API</text>
+    <!-- Bayesian -->
+    <rect x="416" y="198" width="88" height="20" rx="10" fill="#0c0a1e" stroke="#f59e0b" stroke-width="0.8" opacity="0.9"/>
+    <text x="460" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#f59e0b">🧮 Bayesian AI</text>
+    <!-- Tailwind -->
+    <rect x="512" y="198" width="74" height="20" rx="10" fill="#0c0a1e" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+    <text x="549" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#38bdf8">🎨 Tailwind</text>
+    <!-- MIT -->
+    <rect x="594" y="198" width="56" height="20" rx="10" fill="#0c0a1e" stroke="#4ade80" stroke-width="0.8" opacity="0.9"/>
+    <text x="622" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#4ade80">✓ MIT</text>
+    <!-- Live -->
+    <rect x="658" y="198" width="52" height="20" rx="10" fill="#0c0a1e" stroke="#f87171" stroke-width="0.8" opacity="0.9"/>
+    <text x="684" y="212" text-anchor="middle" font-family="monospace" font-size="9" fill="#f87171">● LIVE</text>
+  </g>
+
+  <!-- ══ CTA ══ -->
+  <g class="tagline">
+    <!-- Button -->
+    <rect x="330" y="238" width="240" height="36" rx="18" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"/>
+    <rect x="332" y="240" width="236" height="32" rx="17" fill="#f59e0b" opacity="0.08"/>
+    <text x="450" y="261" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+          fill="#fde68a" letter-spacing="2">▶  EXPLORE THE VAULT</text>
+  </g>
+
+  <!-- Floating gold particles -->
+  <circle class="p1" cx="180" cy="200" r="2" fill="#f59e0b" opacity="0.6"/>
+  <circle class="p2" cx="720" cy="210" r="1.5" fill="#fde68a" opacity="0.5"/>
+  <circle class="p3" cx="450" cy="90"  r="1.8" fill="#f59e0b" opacity="0.4"/>
+  <circle class="p1" cx="290" cy="240" r="1.2" fill="#fbbf24" opacity="0.5"/>
+  <circle class="p2" cx="610" cy="230" r="1.5" fill="#fde68a" opacity="0.6"/>
+
+  <!-- ══ GRAIN ══ -->
+  <rect class="grain" width="900" height="320" filter="url(#grain-filter)" opacity="0.04"/>
+</svg>
